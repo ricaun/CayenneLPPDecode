@@ -13,7 +13,7 @@ This library uses the [ArduinoJson](https://github.com/bblanchon/ArduinoJson) li
 ## Documentation
 
 * API References:
-    * [CayenneLPP](docs/CayenneLPP.md) (Cloned [Johan Stokking](https://github.com/TheThingsNetwork/arduino-device-lib))
+    * [CayenneLPP](docs/CayenneLPP.md) ([Johan Stokking](https://github.com/TheThingsNetwork/arduino-device-lib))
     * [CayenneLPPDecode](docs/CayenneLPPDecode.md)
 
 ## Examples
@@ -71,8 +71,8 @@ lpp.addGPS(1, -12.34f, 45.56f, 9.01f);
 ```
 
 The json field name was based on The Things Network payload format Cayenne LPP.
-[[imgs/ttn_format.png|alt=ttn_format]]
-[[imgs/ttn_fields.png|alt=ttn_fields]]
+<img src="imgs/ttn_format.png" alt="ttn_format">
+<img src="imgs/ttn_fields.png" alt="ttn_fields">
 
 ---
 
