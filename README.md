@@ -1,6 +1,6 @@
 # CayenneLPPDecode
 
-This is an Arduino Library for Arduino Compatible with Cayenne Low Power Payload Decoder to Json format (ArduinoJson)
+This is an Arduino Library Compatible to Decoder Cayenne Low Power Payload to Json format (ArduinoJson).
 
 ## Dependences
 
@@ -70,8 +70,10 @@ lpp.addGPS(1, -12.34f, 45.56f, 9.01f);
 }
 ```
 
+## Json Field
+
 The json field name was based on The Things Network payload format Cayenne LPP.
-<img src="imgs/ttn_format.png" alt="ttn_format">
+
 <img src="imgs/ttn_fields.png" alt="ttn_fields">
 
 ---
