@@ -15,7 +15,7 @@ CayenneLPPDecode	KEYWORD1
 
 reset	KEYWORD2
 getSize	KEYWORD2
-*getBuffer	KEYWORD2
+getBuffer	KEYWORD2
 copy	KEYWORD2
 addDigitalInput	KEYWORD2
 addDigitalOutput	KEYWORD2
