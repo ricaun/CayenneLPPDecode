@@ -8,7 +8,7 @@ This library uses the [ArduinoJson](https://github.com/bblanchon/ArduinoJson) li
 
 ## Installation
 
-* Install the library by [Importing the .zip library](https://www.arduino.cc/en/Guide/Libraries#toc4) using either the [master](https://github.com/loranow/CayenneLPPDecode/archive/master.zip) or one of the [releases](https://github.com/loranow/CayenneLPPDecode/releases) ZIP files.
+* Install the library by [Importing the .zip library](https://www.arduino.cc/en/Guide/Libraries#toc4) using either the [master](https://github.com/ricaun/CayenneLPPDecode/archive/master.zip) or one of the [releases](https://github.com/ricaun/CayenneLPPDecode/releases) ZIP files.
 
 ## Documentation
 
@@ -78,5 +78,5 @@ The json field name was based on The Things Network payload format Cayenne LPP.
 
 ---
 
-Do you like this library? Please [star this project on GitHub](https://github.com/loranow/CayenneLPPDecode/stargazers)!
+Do you like this library? Please [star this project on GitHub](https://github.com/ricaun/CayenneLPPDecode/stargazers)!
 
