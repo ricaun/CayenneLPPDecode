@@ -9,6 +9,9 @@
 
   You need two devices to test this example.
 
+  Updated: 
+    02-04-2019 - Update to ArduinoJson v6
+
   created 18 October 2018
   by Luiz H. Cassettari
 */
@@ -76,10 +79,10 @@ void LoRa_sendMessage() {
 
 void onReceive(int packetSize) {
 
-  DynamicJsonBuffer jsonBuffer;
+  DynamicJsonDocument jsonBuffer(512);
   CayenneLPPDecode lppd;
 
-  JsonObject& root = jsonBuffer.createObject();
+  JsonObject root = jsonBuffer.to<JsonObject>();
 
   while (LoRa.available()) {
     lppd.write(LoRa.read());
@@ -90,7 +93,7 @@ void onReceive(int packetSize) {
   Serial.print("Receive: ");
   Serial.println();
 
-  root.prettyPrintTo(Serial);
+  serializeJsonPretty(root ,Serial);
   Serial.println();
 }
 

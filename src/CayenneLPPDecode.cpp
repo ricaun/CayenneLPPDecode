@@ -132,7 +132,7 @@ void CayenneLPPDecode::decode(JsonObject &_root)
             break;
         case LPP_ACCELEROMETER:
         {
-            JsonObject &json = root.createNestedObject(s);
+            JsonObject json = root.createNestedObject(s);
             json[F("x")] = read16() / 1000.0f;
             json[F("y")] = read16() / 1000.0f;
             json[F("z")] = read16() / 1000.0f;
@@ -143,7 +143,7 @@ void CayenneLPPDecode::decode(JsonObject &_root)
             break;
         case LPP_GYROMETER:
         {
-            JsonObject &json = root.createNestedObject(s);
+            JsonObject json = root.createNestedObject(s);
             json[F("x")] = read16() / 100.0f;
             json[F("y")] = read16() / 100.0f;
             json[F("z")] = read16() / 100.0f;
@@ -151,7 +151,7 @@ void CayenneLPPDecode::decode(JsonObject &_root)
         }
         case LPP_GPS:
         {
-            JsonObject &json = root.createNestedObject(s);
+            JsonObject json = root.createNestedObject(s);
             json[F("latitude")] = read24() / 10000.0f;
             json[F("longitude")] = read24() / 10000.0f;
             json[F("altitude")] = read24() / 100.0f;

@@ -3,6 +3,9 @@
 
   This code create a CayenneLPP package and decode to Json.
 
+  Updated: 
+    02-04-2019 - Update to ArduinoJson v6
+
   created 18 October 2018
   by Luiz H. Cassettari
 */
@@ -10,11 +13,11 @@
 #include <CayenneLPPDecode.h>
 
 void setup() {
-  DynamicJsonBuffer jsonBuffer;
+  DynamicJsonDocument jsonBuffer(512);
   CayenneLPP lpp(64);
   CayenneLPPDecode lppd;
 
-  JsonObject& root = jsonBuffer.createObject();
+  JsonObject root = jsonBuffer.to<JsonObject>();
 
   Serial.begin(115200);
   Serial.println();
@@ -36,7 +39,7 @@ void setup() {
   lppd.write(lpp.getBuffer(), lpp.getSize());
 
   lppd.decode(root);
-  root.prettyPrintTo(Serial);
+  serializeJsonPretty(root ,Serial);
   Serial.println();
 }
 
