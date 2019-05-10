@@ -41,6 +41,7 @@ public:
   void decode(JsonObject &_root);
 
   void reset();
+  bool isValid();
 
 private:
   virtual int available();

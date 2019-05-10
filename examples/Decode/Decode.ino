@@ -12,7 +12,8 @@
 
 #include <CayenneLPPDecode.h>
 
-void setup() {
+void setup()
+{
   DynamicJsonDocument jsonBuffer(512);
   CayenneLPP lpp(64);
   CayenneLPPDecode lppd;
@@ -37,12 +38,14 @@ void setup() {
   lpp.addGPS(1, -12.34f, 45.56f, 9.01f);
 
   lppd.write(lpp.getBuffer(), lpp.getSize());
-
-  lppd.decode(root);
-  serializeJsonPretty(root ,Serial);
-  Serial.println();
+  if (lppd.isValid())
+  {
+    lppd.decode(root);
+    serializeJsonPretty(root, Serial);
+    Serial.println();
+  }
 }
 
-void loop() {
-
+void loop()
+{
 }

@@ -88,13 +88,16 @@ void onReceive(int packetSize) {
     lppd.write(LoRa.read());
   }
 
-  lppd.decode(root);
-
   Serial.print("Receive: ");
   Serial.println();
 
-  serializeJsonPretty(root ,Serial);
-  Serial.println();
+  if (lppd.isValid())
+  {
+    lppd.decode(root);
+
+    serializeJsonPretty(root, Serial);
+    Serial.println();
+  }
 }
 
 boolean runEvery(unsigned long interval)

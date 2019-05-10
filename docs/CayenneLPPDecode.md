@@ -40,5 +40,11 @@ Decode buffer to the JsonObject root, check [ArduinoJson](https://github.com/bbl
 void decode(JsonObject &root);
 ```
 
+## Method: `isValid`
 
+This function checks if the buffer is a CayenneLPP valid payload.
+
+```c
+bool isValid();
+```
 

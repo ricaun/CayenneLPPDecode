@@ -99,6 +99,63 @@ void CayenneLPPDecode::reset(void)
     payload_position = 0;
 }
 
+bool CayenneLPPDecode::isValid()
+{
+    int i = 0;
+    int len = payload_length;
+    if (len < 2)
+        return false;
+
+    while (i < len)
+    {
+        int channel = payload_buffer[i];
+        int type = payload_buffer[i + 1];
+        switch (type)
+        {
+        case LPP_DIGITAL_INPUT:
+        case LPP_DIGITAL_OUTPUT:
+            i += LPP_DIGITAL_OUTPUT_SIZE;
+            break;
+        case LPP_ANALOG_INPUT:
+        case LPP_ANALOG_OUTPUT:
+            i += LPP_ANALOG_OUTPUT_SIZE;
+            break;
+        case LPP_LUMINOSITY:
+            i += LPP_LUMINOSITY_SIZE;
+            break;
+        case LPP_PRESENCE:
+            i += LPP_PRESENCE_SIZE;
+            break;
+        case LPP_TEMPERATURE:
+            i += LPP_TEMPERATURE_SIZE;
+            break;
+        case LPP_RELATIVE_HUMIDITY:
+            i += LPP_RELATIVE_HUMIDITY_SIZE;
+            break;
+        case LPP_ACCELEROMETER:
+            i += LPP_ACCELEROMETER_SIZE;
+            break;
+        case LPP_BAROMETRIC_PRESSURE:
+            i += LPP_BAROMETRIC_PRESSURE_SIZE;
+            break;
+        case LPP_GYROMETER:
+            i += LPP_GYROMETER_SIZE;
+            break;
+        case LPP_GPS:
+            i += LPP_GPS_SIZE;
+            break;
+        default:
+            return false;
+            break;
+        }
+    }
+
+    if (i > len)
+        return false;
+
+    return true;
+}
+
 void CayenneLPPDecode::decode(JsonObject &_root)
 {
     JsonObject &root = (JsonObject &)_root;

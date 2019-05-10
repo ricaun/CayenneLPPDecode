@@ -30,6 +30,7 @@ addBarometricPressure	KEYWORD2
 addGyrometer	KEYWORD2
 addGPS	KEYWORD2
 
+isValid	KEYWORD2
 decode	KEYWORD2
 dumpBuffer	KEYWORD2
 
