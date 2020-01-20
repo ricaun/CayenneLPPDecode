@@ -1,3 +1,5 @@
+This repository is archived and if you need a similar library you can use the [CayenneLPP](https://github.com/ElectronicCats/CayenneLPP) library.
+
 # CayenneLPPDecode
 
 This is an Arduino Library Compatible to Decoder Cayenne Low Power Payload to Json format (ArduinoJson).
